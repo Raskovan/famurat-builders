@@ -1,0 +1,38 @@
+.aboutArrow {
+		background-image: url('../assets/arrow.svg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: -4vh bottom;
+    background-size: 18vh;
+}
+
+.foto {
+  border-radius: 50%;
+  width: 15vw;
+}
+
+.container {
+  padding: 30px 10vw;
+  font-size: 2.7vw;
+  font-weight: 300;
+  line-height: 4vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 640px) {
+  .foto {
+    border-radius: 0;
+    width: 30vw;
+  }
+  .container {
+    padding: 20px 5vw;
+    font-size: 3.5vw;
+    font-weight: 300;
+    line-height: 5vw;
+  }
+  .aboutArrow {
+    background-position: -4vh bottom;
+    background-size: 15vh;
+  }
+}

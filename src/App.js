@@ -1,25 +1,27 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Navbar from "./Components/Navbar";
+import Slides from "./Components/Slides";
+import About from "./Components/About";
 
 class App extends Component {
+  state = {
+    gallery: []
+  };
+
+  componentDidMount() {
+    fetch(`http://res.cloudinary.com/katala/image/list/gallery.json`)
+      .then(res => res.json())
+      .then(response => {
+        this.setState({ gallery: response.resources });
+      });
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Navbar />
+        <Slides images={this.state.gallery} />
+        <About />
       </div>
     );
   }
