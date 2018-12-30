@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import Navbar from "./Components/Navbar";
 import Slides from "./Components/Slides";
 import About from "./Components/About";
+import Quotes from "./Components/Quotes";
+import Gallery from "./Components/Gallery"
+import Footer from "./Components/Footer"
+import Getintouch from './Components/Getintouch';
 
 class App extends Component {
   state = {
@@ -9,7 +13,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    fetch(`http://res.cloudinary.com/katala/image/list/gallery.json`)
+    fetch('http://res.cloudinary.com/katala/image/list/gallery.json')
       .then(res => res.json())
       .then(response => {
         this.setState({ gallery: response.resources });
@@ -22,6 +26,10 @@ class App extends Component {
         <Navbar />
         <Slides images={this.state.gallery} />
         <About />
+        <Gallery images={this.state.gallery}/>
+        <Quotes />
+        <Getintouch />
+        <Footer />
       </div>
     );
   }

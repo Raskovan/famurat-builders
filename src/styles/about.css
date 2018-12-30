@@ -1,0 +1,133 @@
+.aboutArrow {
+		background-image: url('../assets/arrow.svg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: -4vh bottom;
+    background-size: 18vh;
+    height: 30vh;
+    display: flex;
+}
+
+.foto {
+  border-radius: 100%;
+  width: 15vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.container {
+  padding: 0 10vw;
+  font-size: 2.3vw;
+  font-weight: 300;
+  line-height: 3.5vw;
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+}
+
+.container-quotes {
+  background-color: rgb(236, 236, 236);
+  padding: 30px 10vw;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+}
+
+.quote {
+  flex:1 1 auto;
+}
+
+.container-quotes > div:first-of-type {
+  margin: 0 65px 0 0;
+}
+
+.quote-lines {
+  font-size: 1.2vw;
+  font-weight: 500;
+  line-height: 1.9vw;
+}
+.quote-lines::before {
+  background-image: url('../assets/quotes.svg');
+  width: 80px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: " ";
+  z-index: 1;
+  padding-bottom: 70px;
+  float: left;
+  margin-right: 10px;
+  vertical-align: top;
+}
+
+.quote-names {
+  font-size: 1.6vw;
+  font-weight: 100;
+  line-height: 2.5vw;
+  text-align: right;
+}
+
+.quote-names::before {
+  content: "\2014";
+}
+
+.logos-header {
+  font-size: 1.2vw;
+  font-weight: 300;
+  line-height: 1.5vw;
+  text-align: center;
+  padding: 20px 0 0 0;
+  color: rgb(94, 94, 94);
+}
+
+.container-logos {
+  padding: 0 20vw 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 15px solid rgb(26, 95, 160);
+}
+
+@media (max-width: 640px) {
+  .foto {
+    border-radius: 0;
+    width: 30vw;
+  }
+  .container {
+    padding: 20px 5vw;
+    font-size: 3.5vw;
+    font-weight: 300;
+    line-height: 5vw;
+  }
+  .aboutArrow {
+    background-position: -4vh bottom;
+    background-size: 15vh;
+  }
+}
+
+
+@media (max-width: 375px) {
+  .foto {
+    border-radius: 0;
+    width: 30vw;
+  }
+
+  .container {
+    padding: 20px 5vw;
+    font-size: 3.5vw;
+    font-weight: 300;
+    line-height: 5vw;
+  }
+
+  .aboutArrow {
+    background-position: -4vh bottom;
+    background-size: 15vh;
+    		height: 25vh;
+  }
+
+  .container-quotes {
+    padding: 15px 5vw;
+    font-size: 2.8vw;
+    line-height: 3.5vw;
+  }
+}

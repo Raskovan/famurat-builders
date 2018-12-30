@@ -1,24 +1,22 @@
 import React from "react";
-// import "../navbar.css";
 import './styles.css';
+
+// navigator.registerProtocolHandler('web+custom', 'http://localhost:3000/rph?q=%s', 'My App');
 
 
 const Navbar = props => {
   return (
+    <div>
     <header>
       <section>
         <ul>
-          <img src={require(`../assets/fb_logo.png`)} alt="Famurat Builders" className="logo" />
-          <li><a href="/*">About</a></li>
-          <li><a href="/*">Testimonials</a></li>
-          <li><a href="/*">Services</a></li>
+          <img src={require(`../assets/fb-logo.svg`)} alt="Famurat Builders" className="logo" />
+          < li > < a href = "mailto:alexey.katalkin@gmail.com?cc=someoneelse@theirsite.com, another@thatsite.com, me@mysite.com&bcc=lastperson@theirsite.com&subject=Quote from Famurat Builders&body=Please Give me a Quote"  target="_blank" className = "myButton" rel='noopener noreferrer' > Request a Quote < /a></li >
         </ul>
       </section>
     </header>
+    </div>
   );
 };
-// <a href="/*" target="_blank">
-//   <img src="http://svgshare.com/i/3zm.svg" alt="GitHub Repository" />
-// </a>
 
 export default Navbar;

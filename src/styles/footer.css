@@ -1,0 +1,26 @@
+.footer-container {
+    padding: 30px 10vw;
+    display: flex;
+    background-color: rgb(48, 48, 48);
+    justify-content: center
+}
+
+.footer-logo-container {
+    padding-right: 50px;
+    width: 200px;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    align-items: flex-start;
+}
+
+.footer-text-container {
+    width: 600px;
+    color: rgb(185, 185, 185);
+    font-size: 1.5vh;
+    font-weight: 300;
+    line-height: 2vh;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+}

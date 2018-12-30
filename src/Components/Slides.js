@@ -14,7 +14,7 @@ class Slides extends Component {
     this.props.images.map(image => (
       images.push({
         "description": image.context ? `${image.context.custom.alt}` : null,
-        "image": baseurl + `${image.public_id}`+ '.jpg',
+        "image": baseurl + image.public_id + '.' + image.format,
         "title": image.context ? `${image.context.custom.caption}` : null
       })
     ));
@@ -22,7 +22,7 @@ class Slides extends Component {
     return (
       <div>
       {images.length > 0 ?
-      <Slider className="slider-wrapper" autoplay={1000}>
+        <Slider className="slider-wrapper" autoplay={4500} touchDisabled={true}>
       			{images.map((item, index) => (
       				<div
       					key={index}
