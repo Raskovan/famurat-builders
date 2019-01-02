@@ -20,7 +20,7 @@ class Gallery extends Component {
                 {images.length > 0 ?
                 <div className="gallery-wrapper">
                     {images.map((item, index) => (
-                        <div key={index} className="gallery-image">
+                        <div key={index} className="gallery-image" onClick={this.props.handleShow}>
                             <img className="image" src={item.image_url} alt={item.description}/>
                             <div className="middle">
                                 <div className="const-text">SHOWCASE</div>
