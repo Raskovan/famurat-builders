@@ -11,6 +11,7 @@
     width: 35vw;
     height: 23vw;
     flex-grow: 1;
+    cursor: pointer;
 }
 
 .gallery-wrapper>div:first-child {

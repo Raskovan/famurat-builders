@@ -9,7 +9,7 @@ import 'normalize.css/normalize.css';
 class Slides extends Component {
 
   render() {
-  const images=[]
+    const images=[]
     const baseurl= "https://res.cloudinary.com/katala/image/upload/"
     this.props.images.map(image => (
       images.push({

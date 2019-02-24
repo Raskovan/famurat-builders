@@ -13,18 +13,20 @@ class Modal extends Component {
                 "title": image.context ? `${image.context.custom.caption}` : null,
                 "description": image.context ? `${image.context.custom.alt}` : null,
                 "width": image.width,
-                "height": image.height
+                "height": image.height,
+                "cover": image.context.custom.cover ? true : false,
+                "tag": image.context.custom.placement,
             })
         ));
         return (
             <div className={showHideClassName}>
                 <section className='modal-main'>
-                    <div className="close-btn" onClick={this.props.handleClose}>
-                    </div>
+                    <div className="close-btn" onClick={this.props.handleClose}/>
                     {images.length > 0 ? 
                         <div className="module-image-container">
-                            <img className='module-image' src={images[0].image_url}/>
-                        </div> : null}
+                            <img className='module-image' src={images[0].image_url} alt={images[0].title} />
+                        </div> : null
+                    }
                 </section>
             </div>
         );

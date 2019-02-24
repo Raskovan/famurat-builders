@@ -10,13 +10,14 @@ import Modal from "./Components/Modal"
 
 class App extends Component {
   state = {
-    gallery: [],
-    show: false
+    sliderImages: [],
+    galleryImages: [],
+    show: false,
+    tag: ""
   };
 
-  showModal = () => {
-    this.setState({show: true})
-    console.log("Image clicked", this.state)
+  showModal = (tag) => {
+    this.setState({show: true, tag:tag})
   }
 
   hideModal = () => {
@@ -27,18 +28,20 @@ class App extends Component {
     fetch('http://res.cloudinary.com/katala/image/list/gallery.json')
       .then(res => res.json())
       .then(response => {
-        this.setState({ gallery: response.resources });
+        let sliderImages = response.resources.filter(img => img.context.custom.placement === 'slider')
+        let galleryImages = response.resources.filter(img => img.context.custom.placement !== 'slider')
+        this.setState({ sliderImages: sliderImages,  galleryImages: galleryImages});
       });
   }
 
   render() {
     return (
       <div>
-        <Modal showModal={this.state.show} handleClose={this.hideModal} images={this.state.gallery}/>
+        <Modal showModal={this.state.show} value={this.state.tag} handleClose={this.hideModal} images={this.state.galleryImages.filter(image => image.context.custom.placement === this.state.tag)}/>
         <Navbar />
-        <Slides images={this.state.gallery} />
+        <Slides images={this.state.sliderImages} />
         <About />
-        <Gallery images={this.state.gallery} handleShow={this.showModal}/>
+        <Gallery images={this.state.galleryImages} handleShow={this.showModal}/>
         <Quotes />
         <Getintouch />
         <Footer />
