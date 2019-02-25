@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/modal.css';
+import Slideshow from "./Slideshow";
 
 class Modal extends Component {
     
@@ -22,11 +23,7 @@ class Modal extends Component {
             <div className={showHideClassName}>
                 <section className='modal-main'>
                     <div className="close-btn" onClick={this.props.handleClose}/>
-                    {images.length > 0 ? 
-                        <div className="module-image-container">
-                            <img className='module-image' src={images[0].image_url} alt={images[0].title} />
-                        </div> : null
-                    }
+                    <Slideshow images={images}/>
                 </section>
             </div>
         );
