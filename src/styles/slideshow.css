@@ -36,7 +36,7 @@
 .nextArrow {
     position: absolute;
     top: 50%;
-    right: 15px;
+    right: 5px;
 		transform: translateY(-50%);
 		z-index: 10;
 		background: url('../assets/arrow.svg') no-repeat center center / 16px;
@@ -50,7 +50,7 @@
 .backArrow {
     position: absolute;
     top: 50%;
-    left: 15px;
+    left: 5px;
 		transform: translateY(-50%);
 		z-index: 10;
 		background: url('../assets/arrow.svg') no-repeat center center / 16px;
