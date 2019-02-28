@@ -7,14 +7,14 @@ class Footer extends Component {
     return (
       <div className="footer-container">
         <div className="footer-logo-container">
-          <div style={{ padding: "0 15px 25px 0" }}>
+          <div className="logo-style">
             <img
               style={{ width: "150px" }}
               src={require(`../assets/nyccaf-logo.png`)}
               alt="NYC CAF"
             />
           </div>
-          <div style={{ padding: "0 15px 25px 0" }}>
+          <div className="logo-style">
             <img
               style={{ width: "80px" }}
               src={require(`../assets/epa-logo.png`)}

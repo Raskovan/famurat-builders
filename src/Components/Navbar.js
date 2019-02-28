@@ -9,10 +9,11 @@ const Navbar = props => {
     <div>
     <header>
       <section>
-        <ul>
+        <div>
           <img src={require(`../assets/fb-logo.svg`)} alt="Famurat Builders" className="logo" />
-          < li > < a href = "mailto:alexey.katalkin@gmail.com?cc=someoneelse@theirsite.com, another@thatsite.com, me@mysite.com&bcc=lastperson@theirsite.com&subject=Quote from Famurat Builders&body=Please Give me a Quote"  target="_blank" className = "myButton" rel='noopener noreferrer' > Request a Quote < /a></li >
-        </ul>
+          </div>
+          <div>< a href = "mailto:alexey.katalkin@gmail.com?cc=someoneelse@theirsite.com, another@thatsite.com, me@mysite.com&bcc=lastperson@theirsite.com&subject=Quote from Famurat Builders&body=Please Give me a Quote"  target="_blank" className = "myButton" rel='noopener noreferrer' > Request a Quote < /a>
+          </div >
       </section>
     </header>
     </div>

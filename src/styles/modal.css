@@ -7,6 +7,8 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
     
     .modal-main {
         position: fixed;
@@ -34,15 +36,21 @@
 .close-btn{
     background: url('../assets/close.svg') no-repeat scroll right center;
     background-size: 4vh;
+    background-position: center;
     color:white;
     text-align: right;
     padding: 20px;
     margin: 20px;
     cursor: pointer;
+    float: right;
+    align-self: flex-end;
 }
 
 .module-image {
     width: 80%;
     display: block;
+    margin: auto;
+}
+.modal-main {
     margin: auto;
 }

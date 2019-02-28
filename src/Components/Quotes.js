@@ -41,25 +41,44 @@ let allQuotes = uniqueQuotes.map((quote, index) =>
 
 const Quotes = () => {
     return (
-        <div>
-            < div className = "container-quotes" >
-                {allQuotes}
-            </div>
-            <div className="logos-header">
-                Read More About Us Here:
-            </div>
-            <div className="container-logos">
-                < a href = "https://www.yelp.com/biz/famurat-builders-brooklyn-2" target="_new" >
-                    < img style = {{width: '10vw'}} src = {require(`../assets/Yelp_Logo.jpg`)} alt = "Yelp Logo" className = "logo" / >
-                < /a>
-                    < img style = {{width: '25vw'}} src = {require(`../assets/new-york-times-logo.png`)} alt = "Yelp Logo" className = "logo" / >
-                < a href = "    https://blog.sweeten.com/before-after/kitchens/site-visit-a-developers-kitchen-gets-flipped/"
-                target = "_new" >
-                    < img style = {{width: '8vw'}} src = {require(`../assets/Sweeten_Logo.jpg`)} alt = "Yelp Logo" className = "logo" / >
-                </a>
-            </div>
+      <div>
+        <div className="container-quotes">{allQuotes}</div>
+        <div className="logos-header">Read More About Us Here:</div>
+        <div className="container-logos">
+          <a
+            href="https://www.yelp.com/biz/famurat-builders-brooklyn-2"
+            target="_new"
+          >
+            <img
+              id="yelp"
+              style={{ width: "10vw" }}
+              src={require(`../assets/Yelp_Logo.jpg`)}
+              alt="Yelp Logo"
+              className="logo"
+            />
+          </a>
+          <img
+            id="nyt"
+            style={{ width: "25vw" }}
+            src={require(`../assets/new-york-times-logo.png`)}
+            alt="Yelp Logo"
+            className="logo"
+          />
+          <a
+            href="    https://blog.sweeten.com/before-after/kitchens/site-visit-a-developers-kitchen-gets-flipped/"
+            target="_new"
+          >
+            <img
+              id="sweeten"
+              style={{ width: "8vw" }}
+              src={require(`../assets/Sweeten_Logo.jpg`)}
+              alt="Yelp Logo"
+              className="logo"
+            />
+          </a>
         </div>
-        );
+      </div>
+    );
     };
     
     export default Quotes;

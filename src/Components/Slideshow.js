@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import "../styles/slideshow.css";
 
 class Slideshow extends Component {
-    state = {
-      currentIndex: 0,
-      translateValue: 0
-    };
+  state = {
+    currentIndex: 0,
+    translateValue: 0
+  };
 
   goToPrevSlide = () => {
     if (this.state.currentIndex === 0) return;
@@ -45,7 +45,7 @@ class Slideshow extends Component {
           }}
         >
           {this.props.images.map((image, i) => (
-            <Slide key={i} image={image} />
+            <Slide key={i} image={image} length={this.props.images.length} index={i+1}/>
           ))}
         </div>
         <div className="backArrow arrow" onClick={this.goToPrevSlide}>
@@ -59,14 +59,22 @@ class Slideshow extends Component {
   }
 }
 
-const Slide = ({ image }) => {
+const Slide = ({ image, length, index }) => {
   const styles = {
     backgroundImage: `url(${image.image_url})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "50% 60%"
   };
-  return <div className="glr_slide" style={styles} />;
+  return (
+    <div className="glr_slide">
+      <div className="glr_slide" style={styles}>
+      <p className="slide-caption">
+      {index} of {length} > {image.description !== 'undefined' ? image.description : "Photo"}
+      </p>
+      </div>
+    </div>
+  );
 };
 
 export default Slideshow;
