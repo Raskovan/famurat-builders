@@ -2,13 +2,22 @@ import React, { Component } from 'react';
 import '../styles/gallery.css';
 
 class Gallery extends Component {
+      shouldComponentUpdate(nextProps) {
+          if (this.props.images === nextProps.images) return false
+          else return true
+      }
 
     render() {
+        let query =
+          "(-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+        let ratio = matchMedia(query).matches ? 2 : 1
         const images = []
         const baseurl = "https://res.cloudinary.com/katala/image/upload/"
+        const width = window.innerWidth
+        const imageWidth = (width < 600) ? Math.floor(width * 0.9) * ratio : Math.floor(width * 0.4) * ratio;
         this.props.images.map(image => (
             images.push({
-                "image_url": baseurl + image.public_id + '.' + image.format,
+                "image_url": baseurl + 'w_' + imageWidth + '/' + image.public_id + '.' + image.format,
                 "title": image.context ? `${image.context.custom.caption}` : null,
                 "description": image.context ? `${image.context.custom.alt}` : null,
                 "width": image.width,
