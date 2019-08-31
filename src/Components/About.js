@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import "../styles/about.css";
 
-let yearsExp = new Date().getFullYear() - 1999;
+const yearsExp = new Date().getFullYear() - 2000;
 
 class About extends PureComponent {
   render() {

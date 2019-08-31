@@ -6,31 +6,30 @@ import "./styles.css";
 class Navbar extends PureComponent {
   render() {
     return (
-      <div>
-        <header>
-          <section>
-            <div>
-              <img
-                src={require(`../assets/fb-logo.svg`)}
-                alt="Famurat Builders"
-                className="logo"
-              />
-            </div>
-            <div>
-              <a
-                href="mailto:alexey.katalkin@gmail.com?cc=someoneelse@theirsite.com, another@thatsite.com, me@mysite.com&bcc=lastperson@theirsite.com&subject=Quote from Famurat Builders&body=Please Give me a Quote"
-                target="_blank"
-                className="myButton"
-                rel="noopener noreferrer"
-              >
-                {" "}
-                Request a Quote{" "}
-              </a>
-            </div>
-          </section>
-        </header>
-      </div>
-    );
+			<div>
+				<header>
+					<section>
+						<div>
+							<img
+								src={require(`../assets/fb-logo.svg`)}
+								alt='Famurat Builders'
+								className='logo'
+							/>
+						</div>
+						<div>
+							<a
+								href='mailto:info@famuratbuilders.com?cc=natalia@famuratbuilders.com, kris@famuratbuilders.com&subject=Estimate Request&body=Please provide some information about your project, such as: location, start/finish date, do you have architect plans?, will the footprint of the space stay as existing?, are you planning on moving out while the work is done?, does the project include custom fabrication of Kitchen cabinets or built-in millwork?'
+								target='_blank'
+								className='myButton'
+								rel='noopener noreferrer'>
+								{' '}
+								Get Estimate{' '}
+							</a>
+						</div>
+					</section>
+				</header>
+			</div>
+		)
   }
 }
 

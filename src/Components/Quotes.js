@@ -43,44 +43,46 @@ let allQuotes = uniqueQuotes.map((quote, index) => (
 class Quotes extends PureComponent {
   render() {
     return (
-      <div>
-        <div className="container-quotes">{allQuotes}</div>
-        <div className="logos-header">Read More About Us Here:</div>
-        <div className="container-logos">
-          <a
-            href="https://www.yelp.com/biz/famurat-builders-brooklyn-2"
-            target="_new"
-          >
-            <img
-              id="yelp"
-              style={{ width: "10vw" }}
-              src={require(`../assets/Yelp_Logo.jpg`)}
-              alt="Yelp Logo"
-              className="logo"
-            />
-          </a>
-          <img
-            id="nyt"
-            style={{ width: "25vw" }}
-            src={require(`../assets/new-york-times-logo.png`)}
-            alt="Yelp Logo"
-            className="logo"
-          />
-          <a
-            href="    https://blog.sweeten.com/before-after/kitchens/site-visit-a-developers-kitchen-gets-flipped/"
-            target="_new"
-          >
-            <img
-              id="sweeten"
-              style={{ width: "8vw" }}
-              src={require(`../assets/Sweeten_Logo.jpg`)}
-              alt="Yelp Logo"
-              className="logo"
-            />
-          </a>
-        </div>
-      </div>
-    );
+			<div>
+				<div className='container-quotes'>{allQuotes}</div>
+				<div className='logos-header'>Read More About Us Here:</div>
+				<div className='container-logos'>
+					<a
+						href='https://www.yelp.com/biz/famurat-builders-brooklyn-2'
+						target='_new'>
+						<img
+							id='yelp'
+							style={{ width: '10vw' }}
+							src={require(`../assets/Yelp_Logo.jpg`)}
+							alt='Yelp Logo'
+							className='logo'
+						/>
+					</a>
+					<a
+						href='https://www.nytimes.com/2016/12/09/realestate/800-square-feet-and-not-an-inch-wasted.html?rref=collection%2Fsectioncollection%2Frealestate&action=click&contentCollection=realestate&region=rank&module=package&version=highlights&contentPlacement=8&p'
+						target='_new'>
+						<img
+							id='nyt'
+							style={{ width: '25vw' }}
+							src={require(`../assets/new-york-times-logo.png`)}
+							alt='Yelp Logo'
+							className='logo'
+						/>
+					</a>
+					<a
+						href='    https://blog.sweeten.com/before-after/kitchens/site-visit-a-developers-kitchen-gets-flipped/'
+						target='_new'>
+						<img
+							id='sweeten'
+							style={{ width: '8vw' }}
+							src={require(`../assets/Sweeten_Logo.jpg`)}
+							alt='Yelp Logo'
+							className='logo'
+						/>
+					</a>
+				</div>
+			</div>
+		)
   }
 }
 export default Quotes;

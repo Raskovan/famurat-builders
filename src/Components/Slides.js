@@ -14,7 +14,7 @@ class Slides extends Component {
 
   render() {
     const images = [];
-    const baseurl = "https://res.cloudinary.com/katala/image/upload/";
+    const baseurl = "https://res.cloudinary.com/famuratbuilders/image/upload/";
     const width = window.innerWidth;
     let query =
       "(-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi)";

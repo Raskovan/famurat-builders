@@ -9,7 +9,7 @@ class Modal extends Component {
       ? "modal display-block"
       : "modal display-none";
     const images = [];
-    const baseurl = "https://res.cloudinary.com/katala/image/upload/";
+    const baseurl = "https://res.cloudinary.com/famuratbuilders/image/upload/";
     let query =
         "(-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
     let ratio = matchMedia(query).matches ? 2 : 1;
@@ -27,13 +27,13 @@ class Modal extends Component {
       })
     );
     return (
-      <div className={showHideClassName}>
-        <div className="close-btn" onClick={this.props.handleClose} />
-        <section className="modal-main">
-          <Slideshow images={images} />
-        </section>
-      </div>
-    );
+			<div className={showHideClassName}>
+				<div className='close-btn' onClick={this.props.handleClose} />
+				<section className='modal-main'>
+						<Slideshow images={images} />
+				</section>
+			</div>
+		)
   }
 }
 
