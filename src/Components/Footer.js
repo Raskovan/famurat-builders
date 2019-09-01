@@ -14,9 +14,9 @@ class Footer extends PureComponent {
               alt="NYC CAF"
             />
           </div>
-          <div className="logo-style">
+          <div>
             <img
-              style={{ width: "80px" }}
+              style={{ width: "80px", paddingRight: '25px' }}
               src={require(`../assets/epa-logo.png`)}
               alt="EPA"
             />
@@ -26,13 +26,6 @@ class Footer extends PureComponent {
               style={{ width: "50px" }}
               src={require(`../assets/nysif.png`)}
               alt="NYSIF"
-            />
-          </div>
-          <div>
-            <img
-              style={{ width: "150px" }}
-              src={require(`../assets/kingstone.png`)}
-              alt="Kingstone"
             />
           </div>
         </div>

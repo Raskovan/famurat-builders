@@ -6,8 +6,8 @@ class GetinTouch extends PureComponent {
     return (
 			<div className='mail-container'>
 				<div>
-					If you need a quote, schedule an appointment or just want to get
-					in touch, please email us!
+					If you would like to schedule an appointment, request an estimate,
+					or if you have any question, please email us
 				</div>
 				<div className='btn'>
 					<a
@@ -16,7 +16,7 @@ class GetinTouch extends PureComponent {
 						className='bottomBtn'
 						rel='noopener noreferrer'>
 						{' '}
-						Get in Touch!{' '}
+						Get in Touch{' '}
 					</a>
 				</div>
 			</div>

@@ -81,7 +81,7 @@
 }
 
 .container-logos {
-  padding: 0 20vw 10px;
+  padding: 0 10vw 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -157,7 +157,10 @@
 .container-logos {
   padding: 5px 20px 10px 20px;
   justify-content: space-between;
+}
 
+.hide-logo {
+  display: none;
 }
 
 #nyt {
@@ -166,6 +169,10 @@
 
 #yelp {
   width: 15vw !important;
+}
+
+#houzz {
+  width: 20vw !important;
 }
 
 #sweeten {

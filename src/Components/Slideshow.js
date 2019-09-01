@@ -1,80 +1,71 @@
-import React, { Component } from "react";
-import "../styles/slideshow.css";
+import React, { useState, useEffect } from 'react'
+import Slide from './Slide'
+import '../styles/slideshow.css'
 
-class Slideshow extends Component {
-  state = {
-    currentIndex: 0,
-    translateValue: 0
-  };
+function Slideshow(props) {
+	const [indexValue, setIndexValue] = useState({
+		currentIndex: 0,
+		translateValue: 0
+  })
+  
+  useEffect(()=>{
+    setIndexValue({
+			currentIndex: 0,
+			translateValue: 0
+		})
+  }, [props.modal])
 
-  goToPrevSlide = () => {
-    if (this.state.currentIndex === 0) return;
+	const goToPrevSlide = () => {
+		if (indexValue.currentIndex === 0) return
 
-    this.setState(prevState => ({
-      currentIndex: prevState.currentIndex - 1,
-      translateValue: prevState.translateValue + this.slideWidth()
-    }));
-  };
+		setIndexValue(prevState => ({
+			currentIndex: prevState.currentIndex - 1,
+			translateValue: prevState.translateValue + slideWidth()
+		}))
+	}
 
-  goToNextSlide = () => {
-    if (this.state.currentIndex === this.props.images.length - 1) {
-      return this.setState({
-        currentIndex: 0,
-        translateValue: 0
-      });
-    }
+	const goToNextSlide = () => {
+		if (indexValue.currentIndex === props.images.length - 1) {
+			return setIndexValue({
+				currentIndex: 0,
+				translateValue: 0
+			})
+		}
 
-    this.setState(prevState => ({
-      currentIndex: prevState.currentIndex + 1,
-      translateValue: prevState.translateValue + -this.slideWidth()
-    }));
-  };
+		setIndexValue(prevState => ({
+			currentIndex: prevState.currentIndex + 1,
+			translateValue: prevState.translateValue + -slideWidth()
+		}))
+	}
 
-  slideWidth = () => {
-    return document.querySelector(".glr_slide").clientWidth;
-  };
-
-  render() {
-    return (
-      <div className="glr_slider">
-        <div
-          className="glr_slider-wrapper"
-          style={{
-            transform: `translateX(${this.state.translateValue}px)`,
-            transition: "transform ease-out 0.45s"
-          }}
-        >
-          {this.props.images.map((image, i) => (
-            <Slide key={i} image={image} length={this.props.images.length} index={i+1}/>
-          ))}
-        </div>
-        <div className="backArrow arrow" onClick={this.goToPrevSlide}>
-          <i className="fa fa-arrow-left fa-2x" aria-hidden="true" />
-        </div>
-        <div className="nextArrow arrow" onClick={this.goToNextSlide}>
-          <i className="fa fa-arrow-right fa-2x" aria-hidden="true" />
-        </div>
-      </div>
-    );
-  }
+	const slideWidth = () => {
+		return document.querySelector('.glr_slide').clientWidth
+	}
+	return (
+		<div className='glr_slider'>
+			<div
+				className='glr_slider-wrapper'
+				style={{
+					transform: `translateX(${indexValue.translateValue}px)`,
+					transition: 'transform ease-out 0.45s'
+				}}>
+				{props.images.map((image, i) => (
+					<Slide
+						key={i}
+						image={image}
+						length={props.images.length}
+						index={i + 1}
+					/>
+				))}
+			</div>
+			<div className='backArrow arrow' onClick={goToPrevSlide}>
+				<i className='fa fa-arrow-left fa-2x' aria-hidden='true' />
+			</div>
+			<div className='nextArrow arrow' onClick={goToNextSlide}>
+				<i className='fa fa-arrow-right fa-2x' aria-hidden='true' />
+			</div>
+		</div>
+	)
 }
 
-const Slide = ({ image, length, index }) => {
-  const styles = {
-    backgroundImage: `url(${image.image_url})`,
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "50% 60%"
-  };
-  return (
-    <div className="glr_slide">
-      <div className="glr_slide" style={styles}>
-      <p className="slide-caption">
-      {index} of {length} > {image.description !== 'undefined' ? image.description : "Photo"}
-      </p>
-      </div>
-    </div>
-  );
-};
-
-export default Slideshow;
+export default Slideshow
