@@ -5,7 +5,7 @@ function Slide(props) {
 	const { image, length, index } = props
 	const styles = {
 		backgroundImage: `url(${image.image_url})`,
-		backgroundSize: 'cover',
+		backgroundSize: image.height > image.width ? 'contain' : 'cover',
 		backgroundRepeat: 'no-repeat',
 		backgroundPosition: '50% 60%'
 	}
