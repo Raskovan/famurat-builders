@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.1",
+    "eslint": "^6.3.0",
+    "jquery": "^3.4.1",
     "normalize.css": "^8.0.0",
     "nuka-carousel": "^4.4.1",
     "react": "^16.9.0",
@@ -13,11 +15,11 @@
     "react-scripts": "^3.1.1",
     "react-slick": "^0.23.1",
     "react-slideshow-image": "^1.2.2",
-    "react-slidez": "0.0.30",
     "react-swipe": "^5.1.1",
     "react-swipeable-views": "^0.13.3",
     "slick-carousel": "^1.8.1",
-    "swipe-js-iso": "^2.0.4"
+    "swipe-js-iso": "^2.0.4",
+    "typescript": "^3.6.2"
   },
   "scripts": {
     "start": "react-scripts start",
