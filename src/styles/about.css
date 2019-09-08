@@ -81,11 +81,11 @@
 }
 
 .container-logos {
-  padding: 0 20vw 10px;
+  padding: 0 10vw 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 15px solid rgb(26, 95, 160);
+  border-bottom: 15px solid rgb(18, 38, 71);
 }
 
 @media (max-width: 640px) {
@@ -127,7 +127,56 @@
 
   .container-quotes {
     padding: 15px 5vw;
-    font-size: 2.8vw;
     line-height: 3.5vw;
   }
+
+  .quote-lines {
+    font-size: 3.5vw;
+    font-weight: 500;
+    line-height: 5vw;
+  }
+
+  .container-quotes > div:last-of-type {
+    display: none;
+  }
+
+  .container-quotes > div:first-of-type {
+    margin: 0;
+  }
+
+  .quote-names {
+    font-size: 3.6vw;
+    line-height: 4.5vw;
+  }
+.logos-header {
+  font-size: 3.2vw;
+  line-height: 3.5vw;
+  padding: 20px 0 0 0;
+}
+
+.container-logos {
+  padding: 5px 20px 10px 20px;
+  justify-content: space-between;
+}
+
+.hide-logo {
+  display: none;
+}
+
+#nyt {
+  width: 45vw !important;
+}
+
+#yelp {
+  width: 15vw !important;
+}
+
+#houzz {
+  width: 20vw !important;
+}
+
+#sweeten {
+  width: 10vw !important;
+}
+
 }

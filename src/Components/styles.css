@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Oswald:500');
 
 body {
   font-family: 'Lato', sans-serif;
@@ -18,14 +19,18 @@ header {
 header section {
   max-width: 100%;
   margin: auto;
-  padding: 20px 10vw;
-  background: rgb(22, 87, 148);
+  padding: 12px 10vw;
+  background: rgb(18, 38, 71);
+  max-width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 
 header section .logo {
   transform: translateX(0px);
-  width: 350px;
+  width: 400px;
 }
 
 header section a {
@@ -115,7 +120,7 @@ button:hover {
     display: block;
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100% !important;
     background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.9)));
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
     bottom: 0;
@@ -132,7 +137,7 @@ button:hover {
 		height: 32px;
 		text-indent: -9999px;
 		cursor: pointer;
-    opacity: 0.2;
+    opacity: 0;
 }
 
 .previousButton:hover, .nextButton:hover {
@@ -162,6 +167,7 @@ button:hover {
 }
 
 .slider-content .inner {
+  opacity: 0.9;
   padding: 0 70px;
   box-sizing: border-box;
   position: absolute;
@@ -178,7 +184,8 @@ button:hover {
 }
 
 .slider-content .inner h1 {
-  font-weight: 900;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
   margin: 0 auto;
   max-width: 840px;
   color: #FFFFFF;
@@ -229,7 +236,7 @@ button:hover {
 }
 
 .myButton {
-  background-color: rgb(218, 186, 7);
+  background-color: #BD991A;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
   border-radius: 2px;
   display: inline-block;
@@ -245,7 +252,7 @@ button:hover {
 }
 
 .myButton:hover {
-  background-color: rgb(192, 164, 3);
+  background-color: rgb(205, 178, 82);
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, .3);
 }
 
@@ -283,7 +290,7 @@ button:hover {
 
 @media (max-width: 640px) {
   .slider-wrapper, .slide {
-    height: 65vh;
+    height: 60vh;
   }
   header section .logo {
     transform: translateX(0px);
@@ -296,6 +303,7 @@ button:hover {
   header section .logo {
     display: block;
     margin: 0 auto;
+    width: 230px;
   }
   .slider-content .inner h1 {
     font-size: 32px;
@@ -304,6 +312,10 @@ button:hover {
     height: 10vh;
     background-size: cover !important;
   }
+  .myButton {
+  font-size: 8px;
+  padding: 10px 10px;
+}
   /* header section li {
     display: none;
   } */
