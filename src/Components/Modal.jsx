@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import '../styles/modal.css'
 import Slideshow from './Slideshow'
 
-function Modal(props) {
+export default function Modal(props) {
   const modalRef = useRef()
   const onModalClick = e => {
     if (modalRef.current === e.target) {
@@ -53,5 +53,3 @@ function Modal(props) {
 		</div>
 	)
 }
-
-export default Modal

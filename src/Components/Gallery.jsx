@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../styles/gallery.css'
 import Modal from './Modal'
 
-function Gallery(props) {
+export default function Gallery(props) {
 	const [show, setModal] = useState(false)
 	const [tag, setTag] = useState('')
 
@@ -85,5 +85,3 @@ function Gallery(props) {
 		</>
 	)
 }
-
-export default Gallery

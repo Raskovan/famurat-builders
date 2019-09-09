@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/slide.css'
 
-function Slide(props) {
+export default function Slide(props) {
 	const { image, length, index } = props
 	const styles = {
 		backgroundImage: `url(${image.image_url})`,
@@ -10,9 +10,9 @@ function Slide(props) {
 		backgroundPosition: '50% 60%'
 	}
 
-	let formattedCaptionArray = []
+	const formattedCaptionArray = []
 	let link
-	let linkArray = image.description.split(' ')
+	const linkArray = image.description.split(' ')
 	linkArray.forEach(word => {
 		if (word.match('http:') || word.match('https:')) {
 			link = `<a href='${word}' target='_new'>${
@@ -23,7 +23,7 @@ function Slide(props) {
 			formattedCaptionArray.push(word)
 		}
 	})
-	let formattedCaption = formattedCaptionArray.join(' ')
+	const formattedCaption = formattedCaptionArray.join(' ')
 
 	return (
 		<div className='glr_slide'>
@@ -40,5 +40,3 @@ function Slide(props) {
 		</div>
 	)
 }
-
-export default Slide
