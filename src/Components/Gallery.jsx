@@ -40,11 +40,11 @@ export default function Gallery(props) {
 			width: image.width,
 			height: image.height,
 			cover: image.context.custom.cover ? true : false,
-			tag: image.context.custom.placement
+			tag: image.context.custom.placement.toLowerCase().trim()
 		})
 	)
 	let coverImages = images.filter(img => img.cover)
-
+	
 	return (
 		<>
 			<Modal
@@ -52,7 +52,7 @@ export default function Gallery(props) {
 				value={tag}
 				handleClose={hideModal}
 				images={props.images.filter(
-					image => image.context.custom.placement === tag
+					image => image.context.custom.placement.toLowerCase().trim() === tag
 				)}
 			/>
 			<div>
