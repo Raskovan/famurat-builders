@@ -309,7 +309,7 @@ button:hover {
     font-size: 32px;
   }
   .slide {
-    height: 10vh;
+    /* height: 10vh;  why it was here?*/
     background-size: cover !important;
   }
   .myButton {

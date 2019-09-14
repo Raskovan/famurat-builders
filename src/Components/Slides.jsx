@@ -34,7 +34,7 @@ function Slides(props) {
 	)
 
 	return (
-		<div>
+		<>
 			{images.length > 0 ? (
 				<Slider
 					className='slider-wrapper'
@@ -56,7 +56,7 @@ function Slides(props) {
 					))}
 				</Slider>
 			) : null}
-		</div>
+		</>
 	)
 }
 
