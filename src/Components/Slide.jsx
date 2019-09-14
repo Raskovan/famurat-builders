@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { memo } from 'react'
 import '../styles/slide.css'
 
-export default function Slide(props) {
+function Slide(props) {
 	const { image, length, index } = props
 	const styles = {
 		backgroundImage: `url(${image.image_url})`,
@@ -40,3 +40,4 @@ export default function Slide(props) {
 		</div>
 	)
 }
+export default memo(Slide)

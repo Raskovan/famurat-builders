@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { memo } from 'react'
 import '../styles/styles.css'
 
-export default function Navbar() {
+function Navbar() {
 	return (
 		<div>
 			<header>
@@ -28,3 +28,5 @@ export default function Navbar() {
 		</div>
 	)
 }
+
+export default memo(Navbar)

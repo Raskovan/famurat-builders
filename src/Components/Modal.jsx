@@ -1,8 +1,9 @@
-import React, { useRef } from 'react'
+import React, { useRef, memo } from 'react'
 import '../styles/modal.css'
 import Slideshow from './Slideshow'
+// const Slideshow = lazy(() => import('./Slideshow'))
 
-export default function Modal(props) {
+function Modal(props) {
   const modalRef = useRef()
   const onModalClick = e => {
     if (modalRef.current === e.target) {
@@ -44,12 +45,14 @@ export default function Modal(props) {
 		<div className={showHideClassName} ref={modalRef} onClick={onModalClick}>
 			<div className='close-btn' onClick={props.handleClose} />
 			<section className='modal-main'>
-				<Slideshow
-					images={images}
-					modal={props.modal}
-					handleClose={props.handleClose}
-				/>
+					<Slideshow
+						images={images}
+						modal={props.modal}
+						handleClose={props.handleClose}
+					/>
 			</section>
 		</div>
 	)
 }
+
+export default memo(Modal)

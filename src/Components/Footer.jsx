@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { memo } from 'react'
 import '../styles/footer.css'
 
-export default function Footer() {
+function Footer() {
 	let year = new Date().getFullYear()
 	return (
 		<div className='footer-container'>
@@ -43,3 +43,5 @@ export default function Footer() {
 		</div>
 	)
 }
+
+export default memo(Footer)

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { memo } from 'react'
 import '../styles/about.css'
 
-export default function About() {
+function About() {
   const yearsExp = new Date().getFullYear() - 2000
 	return (
 		<div
@@ -24,3 +24,5 @@ export default function About() {
 		</div>
 	)
 }
+
+export default memo(About)

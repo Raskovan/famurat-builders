@@ -1,49 +1,43 @@
-import React, { Component } from "react";
-import Navbar from "./Components/Navbar";
+import React, { useState, useEffect } from 'react'
+import Navbar from './Components/Navbar'
 import Slides from "./Components/Slides";
-import About from "./Components/About";
-import Quotes from "./Components/Quotes";
-import Gallery from "./Components/Gallery";
-import Footer from "./Components/Footer";
-import Getintouch from "./Components/Getintouch";
+import About from './Components/About'
+import Quotes from './Components/Quotes'
+import Gallery from './Components/Gallery'
+import Footer from './Components/Footer'
+import Getintouch from './Components/Getintouch'
 
-class App extends Component {
-  state = {
-    sliderImages: [],
-    galleryImages: [],
-  };
+function App() {
+	const [sliderImages, setSliderImages] = useState([])
+	const [galleryImages, setGalleryImages] = useState([])
 
-  componentDidMount() {
-    fetch("http://res.cloudinary.com/famuratbuilders/image/list/gallery.json")
-      .then(res => res.json())
-      .then(response => {
-        let sliderImages = response.resources.filter(
-          img => img.context.custom.placement === "slider"
-        )
-        let galleryImages = response.resources.filter(
-          img => img.context.custom.placement !== "slider"
-        );
-        this.setState({
-          sliderImages: sliderImages,
-          galleryImages: galleryImages
-        });
-      })
-      .catch(error => console.error('Error:', error));
-  }
+	useEffect(() => {
+		fetch('http://res.cloudinary.com/famuratbuilders/image/list/gallery.json')
+			.then(res => res.json())
+			.then(response => {
+				let sliderImages = response.resources.filter(
+					img => img.context.custom.placement === 'slider'
+				)
+				let galleryImages = response.resources.filter(
+					img => img.context.custom.placement !== 'slider'
+				)
+				setSliderImages(sliderImages)
+				setGalleryImages(galleryImages)
+			})
+			.catch(error => console.error('Error:', error))
+	}, [])
 
-  render() {
-    return (
-      <div>
-        <Navbar />
-        <Slides images={this.state.sliderImages} />
-        <About />
-        <Gallery images={this.state.galleryImages} />
-        <Quotes />
-        <Getintouch />
-        <Footer />
-      </div>
-    );
-  }
+	return (
+		<div>
+			<Navbar />
+      <Slides images={sliderImages} />
+			<About />
+      <Gallery images={galleryImages} />
+			<Quotes />
+			<Getintouch />
+			<Footer />
+		</div>
+	)
 }
 
-export default App;
+export default App

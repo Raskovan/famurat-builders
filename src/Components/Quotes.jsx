@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { memo } from 'react'
 import '../styles/about.css'
 import { quotes } from '../assets/quotes-texts'
 
-export default function Quotes() {
+function Quotes() {
 	let randNum = []
 	for (let i = 1; i <= 2; i++) {
 		let number = Math.round(Math.random() * quotes.length)
@@ -95,3 +95,5 @@ export default function Quotes() {
 		</div>
 	)
 }
+
+export default memo(Quotes)

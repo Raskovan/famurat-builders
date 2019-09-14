@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, memo } from 'react'
 import Slide from './Slide'
 import '../styles/slideshow.css'
 
@@ -68,4 +68,4 @@ function Slideshow(props) {
 	)
 }
 
-export default Slideshow
+export default memo(Slideshow)

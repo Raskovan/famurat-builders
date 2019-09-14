@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { memo } from 'react'
 import '../styles/intouch.css'
 
-export default function GetinTouch() {
+function GetinTouch() {
 	return (
 		<div className='mail-container'>
 			<div style={{ color: 'rgb(18, 38, 71)' }}>
@@ -21,3 +21,4 @@ export default function GetinTouch() {
 		</div>
 	)
 }
+export default memo(GetinTouch)

@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, memo } from 'react'
 import '../styles/gallery.css'
 import Modal from './Modal'
 
-export default function Gallery(props) {
+function Gallery(props) {
 	const [show, setModal] = useState(false)
 	const [tag, setTag] = useState('')
 
@@ -85,3 +85,5 @@ export default function Gallery(props) {
 		</>
 	)
 }
+
+export default memo(Gallery)
