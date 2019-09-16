@@ -1,6 +1,7 @@
 import React, { useRef, memo } from 'react'
 import '../styles/modal.css'
-import Slideshow from './Slideshow'
+// import Slideshow from './Slideshow'
+import SwipeableCarousel from './SwipeableCarousel'
 // const Slideshow = lazy(() => import('./Slideshow'))
 
 function Modal(props) {
@@ -40,17 +41,18 @@ function Modal(props) {
 			tag: image.context.custom.placement
 		})
 	)
-
+		console.log(window.innerWidth, window.innerHeight)
 	return (
 		<div className={showHideClassName} ref={modalRef} onClick={onModalClick}>
-			<div className='close-btn' onClick={props.handleClose} />
-			<section className='modal-main'>
-					<Slideshow
+			{/* <div className='close-btn' onClick={props.handleClose} /> */}
+			{/* <section className='modal-main'> */}
+				<SwipeableCarousel imgs={images}/>
+					{/* <Slideshow
 						images={images}
 						modal={props.modal}
 						handleClose={props.handleClose}
-					/>
-			</section>
+					/> */}
+			{/* </section> */}
 		</div>
 	)
 }

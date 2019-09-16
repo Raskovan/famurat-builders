@@ -40,7 +40,7 @@ function Slides(props) {
 					className='slider-wrapper'
 					autoplay={3500}
 					infinite={true}
-					minSwipeOffset={15}>
+					touchDisabled={true}>
 					{images.map((item, index) => (
 						<div
 							key={index}

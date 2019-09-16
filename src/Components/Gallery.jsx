@@ -9,10 +9,16 @@ function Gallery(props) {
 	const showModal = tag => {
 		setModal(true)
 		setTag(tag)
+		const body = document.body
+		body.style.height = '100vh'
+		body.style.overflowY = 'hidden'
 	}
-
+	
 	const hideModal = e => {
 		setModal(false)
+		const body = document.body
+		body.style.height = ''
+		body.style.overflowY = ''
 	}
 
 	const images = []
@@ -55,7 +61,7 @@ function Gallery(props) {
 					image => image.context.custom.placement.toLowerCase().trim() === tag
 				)}
 			/>
-			<div>
+			{!show && <div>
 				{images.length > 0 ? (
 					<div className='gallery-wrapper'>
 						{coverImages.map((item, index) => (
@@ -81,7 +87,7 @@ function Gallery(props) {
 						))}
 					</div>
 				) : null}
-			</div>
+			</div>}
 		</>
 	)
 }
