@@ -41,13 +41,13 @@ function Modal(props) {
 			tag: image.context.custom.placement
 		})
 	)
-		console.log(window.innerWidth, window.innerHeight)
+
 	return (
-		<div className={showHideClassName} ref={modalRef} onClick={onModalClick}>
+		<div className={showHideClassName} ref={modalRef}>
 			{/* <div className='close-btn' onClick={props.handleClose} /> */}
 			{/* <section className='modal-main'> */}
-				<SwipeableCarousel imgs={images}/>
-					{/* <Slideshow
+			<SwipeableCarousel imgs={images} closeBtn={props.handleClose} />
+			{/* <Slideshow
 						images={images}
 						modal={props.modal}
 						handleClose={props.handleClose}

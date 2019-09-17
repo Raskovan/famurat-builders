@@ -18,13 +18,16 @@ class SwipeableCarousel extends Component {
 		clearTimeout(this.transitionTimeout)
 	}
 
+	handleWindowClick = e => {
+		console.log('click', e.target)
+	}
+
 	handleTouchStart = e => {
 		this.lastTouch = e.nativeEvent.touches[0].clientX
 	}
 	handleTouchMove = e => {
 		const delta = this.lastTouch - e.nativeEvent.touches[0].clientX
 		this.lastTouch = e.nativeEvent.touches[0].clientX
-		console.log('delta', delta)
 		this.handleMovement(delta)
 	}
 	handleTouchEnd = () => {
@@ -84,7 +87,6 @@ class SwipeableCarousel extends Component {
 	}
 
 	transitionTo = (index, duration) => {
-		console.log(index, duration)
 		this.setState({
 			currentIndex: index,
 			movement: index * IMG_WIDTH,
@@ -99,9 +101,17 @@ class SwipeableCarousel extends Component {
 		const { currentIndex, movement, transitionDuration } = this.state
 		const maxLength = this.props.imgs.length - 1
 		const maxMovement = maxLength * IMG_WIDTH
-		console.log('movement', movement)
+
 		return (
-			<div className='App'>
+			<>
+				<div className='close-button'>
+					<img
+						className='close-image'
+						src={require(`../assets/close.svg`)}
+						alt='Closw Button'
+						onClick={this.props.closeBtn}
+					/>
+				</div>
 				<div
 					className='main'
 					style={{
@@ -124,7 +134,11 @@ class SwipeableCarousel extends Component {
 								src={src.image_url}
 								alt={src.title}
 								width='100%'
-								height='100%'
+								height={
+									src.width < src.height
+										? '100%'
+										: IMG_WIDTH / (src.width / src.height) + 'px'
+								}
 							/>
 						))}
 					</div>
@@ -134,7 +148,7 @@ class SwipeableCarousel extends Component {
 							onClick={() => {
 								this.transitionTo(currentIndex - 1, 0.5)
 							}}>
-							←
+							{'<'}
 						</div>
 					)}
 					{movement !== maxMovement && (
@@ -143,11 +157,11 @@ class SwipeableCarousel extends Component {
 							onClick={() => {
 								this.transitionTo(currentIndex + 1, 0.5)
 							}}>
-							→
+							>
 						</div>
 					)}
 				</div>
-			</div>
+			</>
 		)
 	}
 }

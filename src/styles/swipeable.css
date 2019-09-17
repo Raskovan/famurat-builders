@@ -21,6 +21,19 @@ body {
   overflow-x: visible;
   transition-property: transform;
   will-change: transform;
+  align-items: center;
+}
+
+.close-button{
+    position: absolute;
+    cursor: pointer;
+    z-index: 100;
+    align-self: flex-end;
+    padding: 10px;
+}
+
+.close-image {
+  width: 3vw;
 }
 
 img {
@@ -43,8 +56,17 @@ img {
 }
 
 .back {
-  left: 5px;
+  left: 10px;
 }
 .next {
-  right: 5px;
+  right: 10px;
+}
+
+@media (max-width: 375px) {
+  .move {
+    display: none;
+  }
+  .close-image {
+    width: 3vh;
+}
 }
