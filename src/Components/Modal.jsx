@@ -1,17 +1,15 @@
 import React, { useRef, memo } from 'react'
 import '../styles/modal.css'
-// import Slideshow from './Slideshow'
 import SwipeableCarousel from './SwipeableCarousel'
-// const Slideshow = lazy(() => import('./Slideshow'))
 
 function Modal(props) {
   const modalRef = useRef()
-  const onModalClick = e => {
-    if (modalRef.current === e.target) {
-      return props.handleClose()
-    }
-    return
-  }
+  // const onModalClick = e => {
+  //   if (modalRef.current === e.target) {
+  //     return props.handleClose()
+  //   }
+  //   return
+  // }
 
 	let showHideClassName = props.modal
 		? 'modal display-block'
@@ -44,15 +42,7 @@ function Modal(props) {
 
 	return (
 		<div className={showHideClassName} ref={modalRef}>
-			{/* <div className='close-btn' onClick={props.handleClose} /> */}
-			{/* <section className='modal-main'> */}
 			<SwipeableCarousel imgs={images} closeBtn={props.handleClose} />
-			{/* <Slideshow
-						images={images}
-						modal={props.modal}
-						handleClose={props.handleClose}
-					/> */}
-			{/* </section> */}
 		</div>
 	)
 }
