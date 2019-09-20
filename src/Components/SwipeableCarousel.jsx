@@ -24,16 +24,21 @@ function SwipeableCarousel(props) {
 
 	useEffect(() => {
 		function handleResize() {
-			setDimensions({
-				wndHeight: window.innerHeight,
-				wndWidth: window.innerWidth
-			})
-			setData({
-				...data,
-				movement: window.innerWidth * data.currentIndex,
-				currentIndex: currentIndex,
-				transitionDuration: '0s'
-			})
+      if (
+				dimensions.wndHeight - window.innerHeight >= 15 ||
+				dimensions.wndHeight - window.innerHeight <= -15
+			) {
+				setDimensions({
+					wndHeight: window.innerHeight,
+					wndWidth: window.innerWidth
+				})
+				setData({
+					...data,
+					movement: window.innerWidth * data.currentIndex,
+					currentIndex: currentIndex,
+					transitionDuration: '0s'
+				})
+			}
 		}
 		window.addEventListener('resize', handleResize)
 		return () => {
@@ -172,8 +177,9 @@ function SwipeableCarousel(props) {
 						transform: `translateX(${movement * -1}px)`,
 						transitionDuration: transitionDuration
 					}}>
-					{props.imgs.map(src => (
+					{props.imgs.map((src, index) => (
 						<div
+              key={index}
 							className={
 								src.width > src.height
 									? 'img-div-horizontal'
