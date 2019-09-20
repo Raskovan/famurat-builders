@@ -74,7 +74,7 @@ body {
 .img-div-horizontal {
   width: 100vw;
   position: relative;
-  height: 630px
+  height: 750px
 }
 .img-div-vertical {
   width: 100vw;
@@ -88,7 +88,7 @@ body {
   object-fit: contain
 }
   
-@media (max-width: 375px) and (orientation: portrait) {
+@media (max-width: 414px) and (orientation: portrait) {
   .move {
     display: none;
   }

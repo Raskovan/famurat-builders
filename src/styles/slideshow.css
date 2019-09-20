@@ -82,7 +82,7 @@
   transition: transform ease-in .1s;
 } */
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
 	.modal-main {
 		margin: calc(25vh - 20px) 0;
 	}
