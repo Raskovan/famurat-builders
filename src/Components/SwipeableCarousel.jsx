@@ -24,6 +24,10 @@ function SwipeableCarousel(props) {
 
 	useEffect(() => {
 		function handleResize() {
+      if (
+				dimensions.wndHeight - window.innerHeight >= 15 ||
+				dimensions.wndHeight - window.innerHeight <= -15
+			) {
 				setDimensions({
 					wndHeight: window.innerHeight,
 					wndWidth: window.innerWidth
@@ -34,6 +38,7 @@ function SwipeableCarousel(props) {
 					currentIndex: currentIndex,
 					transitionDuration: '0s'
 				})
+			}
 		}
 		window.addEventListener('resize', handleResize)
 		return () => {
@@ -120,13 +125,13 @@ function SwipeableCarousel(props) {
 		}, 1000)
 	}
 
-	// const onModalClick = e => {
-	// 	console.log(e.target, modalRef.current)
-	// 	if (modalRef.current === e.target) {
-	// 		return props.closeBtn()
-	// 	}
-	// 	return
-  // }
+	const onModalClick = e => {
+		console.log(e.target, modalRef.current)
+		if (modalRef.current === e.target) {
+			return props.closeBtn()
+		}
+		return
+  }
   
 	const formattedCaption = image => {
 		const formattedCaptionArray = []
@@ -158,15 +163,16 @@ function SwipeableCarousel(props) {
 			<div
 				className='main'
 				style={{
-					width: `${dimensions.wndWidth}px`,
+					width: '100vw',
 					height: '100vh'
 				}}
-				ref={modalRef}
 				onTouchStart={handleTouchStart}
 				onTouchMove={handleTouchMove}
 				onTouchEnd={handleTouchEnd}
 				onWheel={handleWheel}>
 				<div
+					ref={modalRef}
+					onClick={onModalClick}
 					className='swiper'
 					style={{
 						transform: `translateX(${movement * -1}px)`,
@@ -174,7 +180,7 @@ function SwipeableCarousel(props) {
 					}}>
 					{props.imgs.map((src, index) => (
 						<div
-              key={index}
+							key={index}
 							className={
 								src.width > src.height
 									? 'img-div-horizontal'
