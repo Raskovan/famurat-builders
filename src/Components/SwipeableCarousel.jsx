@@ -24,10 +24,6 @@ function SwipeableCarousel(props) {
 
 	useEffect(() => {
 		function handleResize() {
-      if (
-				dimensions.wndHeight - window.innerHeight >= 15 ||
-				dimensions.wndHeight - window.innerHeight <= -15
-			) {
 				setDimensions({
 					wndHeight: window.innerHeight,
 					wndWidth: window.innerWidth
@@ -38,7 +34,6 @@ function SwipeableCarousel(props) {
 					currentIndex: currentIndex,
 					transitionDuration: '0s'
 				})
-			}
 		}
 		window.addEventListener('resize', handleResize)
 		return () => {
@@ -164,7 +159,7 @@ function SwipeableCarousel(props) {
 				className='main'
 				style={{
 					width: `${dimensions.wndWidth}px`,
-					height: `${dimensions.wndHeight}px`
+					height: '100vh'
 				}}
 				ref={modalRef}
 				onTouchStart={handleTouchStart}
