@@ -24,21 +24,16 @@ function SwipeableCarousel(props) {
 
 	useEffect(() => {
 		function handleResize() {
-      if (
-				dimensions.wndHeight - window.innerHeight >= 15 ||
-				dimensions.wndHeight - window.innerHeight <= -15
-			) {
-				setDimensions({
-					wndHeight: window.innerHeight,
-					wndWidth: window.innerWidth
-				})
-				setData({
-					...data,
-					movement: window.innerWidth * data.currentIndex,
-					currentIndex: currentIndex,
-					transitionDuration: '0s'
-				})
-			}
+			setDimensions({
+				wndHeight: window.innerHeight,
+				wndWidth: window.innerWidth
+			})
+			setData({
+				...data,
+				movement: window.innerWidth * data.currentIndex,
+				currentIndex: currentIndex,
+				transitionDuration: '0s'
+			})
 		}
 		window.addEventListener('resize', handleResize)
 		return () => {
@@ -126,13 +121,12 @@ function SwipeableCarousel(props) {
 	}
 
 	const onModalClick = e => {
-		console.log(e.target, modalRef.current)
 		if (modalRef.current === e.target) {
 			return props.closeBtn()
 		}
 		return
-  }
-  
+	}
+
 	const formattedCaption = image => {
 		const formattedCaptionArray = []
 		let link

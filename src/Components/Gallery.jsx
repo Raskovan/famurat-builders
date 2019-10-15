@@ -61,33 +61,42 @@ function Gallery(props) {
 					image => image.context.custom.placement.toLowerCase().trim() === tag
 				)}
 			/>
-			{!show && <div>
-				{images.length > 0 ? (
-					<div className='gallery-wrapper'>
-						{coverImages.map((item, index) => (
-							<div
-								key={index}
-								className='gallery-image'
-								onClick={() => showModal(item.tag)}>
-								<img
-									className='image'
-									src={item.image_url}
-									alt={item.description}
-								/>
-								<div className='middle'>
-									<div className='const-text'>SHOWCASE</div>
-									<div className='text'>{item.title}</div>
-									<div className='const-text'>
-										{' '}
-										{images.filter(image => image.tag === item.tag).length}{' '}
-										photos{' '}
+			{!show && (
+				<div>
+					{images.length > 0 ? (
+						<div className='gallery-wrapper'>
+							{coverImages.map((item, index) => (
+								<div
+									key={index}
+									className='gallery-image'
+									onClick={() => showModal(item.tag)}>
+									<img
+										id={item.title}
+										className='image'
+										src={item.image_url}
+										alt={item.description}
+									/>
+									<div className='middle'>
+										<div id={item.title} className='const-text'>
+											SHOWCASE
+										</div>
+										<div id={item.title} className='text'>
+											{item.title}
+										</div>
+										<div id={item.title} className='const-text'>
+											{' '}
+											{
+												images.filter(image => image.tag === item.tag).length
+											}{' '}
+											photos{' '}
+										</div>
 									</div>
 								</div>
-							</div>
-						))}
-					</div>
-				) : null}
-			</div>}
+							))}
+						</div>
+					) : null}
+				</div>
+			)}
 		</>
 	)
 }
