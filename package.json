@@ -3,18 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.19.2",
     "jquery": "^3.4.1",
-    "normalize.css": "^8.0.0",
-    "react": "^16.9.0",
-    "react-animated-slider": "^1.1.4",
-    "react-dom": "^16.9.0",
-    "react-scripts": "^3.1.1"
+    "normalize.css": "^8.0.1",
+    "react": "^16.13.0",
+    "react-animated-slider": "^2.0.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "^3.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "aws s3 sync build/ s3://famurat-builders",
+    "deploy": "npm run build && mv ./build/index.html ./build/200.html && surge --project ./build --domain https://famurat-builders.surge.sh/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -25,11 +25,11 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "eslint": "^6.3.0",
+    "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^1.7.0"
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.5.0"
   }
 }

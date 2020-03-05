@@ -1,0 +1,145 @@
+body {
+	margin: 0px;
+}
+
+.main {
+	background-color: #000;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+}
+
+.swiper {
+	display: flex;
+	overflow-x: visible;
+	transition-property: transform;
+	will-change: transform;
+	align-items: center;
+}
+
+.close-button {
+	position: absolute;
+	cursor: pointer;
+	z-index: 100;
+	align-self: flex-end;
+	padding: 10px;
+}
+
+.close-image {
+	width: 3vw;
+}
+
+.image-caption-horizontal, .image-caption-vertical {
+	color: #bd991a;
+	background: black;
+	font-size: 12px;
+	padding: 5px 10px;
+	width: auto;
+	position: absolute;
+	line-height: 15px;
+	margin: 0;
+	top: 20px;
+}
+
+.image-caption-vertical a {
+	color: #bd991a;
+}
+
+.image-caption-horizontal a {
+	color: #bd991a;
+}
+
+.move {
+	display: flex;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 20px;
+	background-color: rgba(255, 255, 255, 0.5);
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border: 0;
+}
+
+.back {
+	left: 10px;
+}
+.next {
+	right: 10px;
+}
+
+.img-div-horizontal {
+  width: 100vw;
+  position: relative;
+  height: 750px
+}
+.img-div-vertical {
+  width: 100vw;
+  position: relative;
+  height: 100vh;
+}
+.img-horizontal {
+  object-fit: cover
+}
+.img-vertical {
+  object-fit: contain
+}
+  
+@media (max-width: 414px) and (orientation: portrait) {
+  .move {
+    display: none;
+  }
+  .close-image {
+    width: 3vh;
+  }
+  .image-caption-horizontal {
+    top: 28vh!important;
+    left: 0!important
+  }
+  .image-caption-vertical {
+    top: 73vh!important;
+    left: 0!important
+  }
+  .img-div-horizontal {
+    width: 100vw;
+    position: relative;
+    height: 230px
+  }
+  .img-div-vertical {
+    width: 100vw;
+    position: relative;
+    height: 600px;
+  }
+  .img-horizontal {
+    object-fit: cover
+  }
+  .img-vertical {
+    object-fit: cover
+  }
+}
+
+@media (max-width: 812px) and (orientation: landscape) {
+  .move {
+    display: none;
+	}
+	.close-image {
+    width: 5vh;
+	}
+  .image-caption-horizontal {
+    top: 5vh!important;
+    left: 0!important
+  }
+  .image-caption-vertical {
+    top: 5vh!important;
+    left: 0!important
+  }
+  .img-div-horizontal {
+    height: 375px
+  }
+  .img-horizontal {
+    object-fit: contain
+  }
+}
