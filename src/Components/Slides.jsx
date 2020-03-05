@@ -6,11 +6,6 @@ import '../styles/styles.css'
 import 'normalize.css/normalize.css'
 
 function Slides(props) {
-  // shouldComponentUpdate(nextProps) {
-  // 	if (this.props.images === nextProps.images) return false
-  // 	else return true
-  // }
-
   const images = []
   const baseurl = 'https://res.cloudinary.com/famuratbuilders/image/upload/'
   const width = window.innerWidth
@@ -42,17 +37,19 @@ function Slides(props) {
           infinite={true}
           touchDisabled={true}
         >
-          {images.map((item, index) => (
+          {images.map((image, index) => (
             <div
               key={index}
               className="slider-content"
               style={{
-                background: `url('${item.image}') no-repeat center center`
+                background: `url('${image.image}') no-repeat center center`
               }}
             >
               <div className="inner">
-                <h1>{item.title}</h1>
-                <p>{item.description}</p>
+                <h1>{image.title}</h1>
+                {image.description !== 'undefined' ? (
+                  <p>{image.description}</p>
+                ) : null}
               </div>
             </div>
           ))}
