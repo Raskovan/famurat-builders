@@ -12,7 +12,7 @@ function App() {
   const [galleryImages, setGalleryImages] = useState([])
 
   useEffect(() => {
-    fetch('https://res.cloudinary.com/famuratbuilders/image/list/gallery.json')
+    fetch(process.env.REACT_APP_CLOUDINARY_URL)
       .then(res => res.json())
       .then(response => {
         const sliderImages = response.resources.filter(

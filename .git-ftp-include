@@ -1,0 +1,6 @@
+!build/
+.gitignore
+.git-ftp-include
+.github
+.git
+legacy/
