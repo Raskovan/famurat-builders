@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import PropTypes from 'prop-types'
 import '../styles/swipeable.css'
 
 let wheelTimeout
@@ -108,7 +109,7 @@ function SwipeableCarousel(props) {
     }, duration * 100)
   }
 
-  const handleClose = e => {
+  const handleClose = () => {
     props.closeBtn()
     setTimeout(() => {
       setData({
@@ -236,6 +237,11 @@ function SwipeableCarousel(props) {
       </div>
     </>
   )
+}
+
+SwipeableCarousel.propTypes = {
+  imgs: PropTypes.array,
+  closeBtn: PropTypes.func
 }
 
 export default SwipeableCarousel

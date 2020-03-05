@@ -1,4 +1,5 @@
 import React, { memo } from 'react'
+import PropTypes from 'prop-types'
 import Slider from 'react-animated-slider'
 import 'react-animated-slider/build/horizontal.css'
 import '../styles/slider-animations.css'
@@ -57,6 +58,10 @@ function Slides(props) {
       ) : null}
     </>
   )
+}
+
+Slides.propTypes = {
+  images: PropTypes.array
 }
 
 export default memo(Slides)

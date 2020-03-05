@@ -1,4 +1,5 @@
 import React, { useState, memo } from 'react'
+import PropTypes from 'prop-types'
 import '../styles/gallery.css'
 import Modal from './Modal'
 
@@ -14,7 +15,7 @@ function Gallery(props) {
     body.style.overflowY = 'hidden'
   }
 
-  const hideModal = e => {
+  const hideModal = () => {
     setModal(false)
     const body = document.body
     body.style.height = ''
@@ -100,6 +101,10 @@ function Gallery(props) {
       )}
     </>
   )
+}
+
+Gallery.propTypes = {
+  images: PropTypes.array
 }
 
 export default memo(Gallery)

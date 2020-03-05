@@ -1,19 +1,14 @@
 import React, { useRef, memo } from 'react'
+import PropTypes from 'prop-types'
 import '../styles/modal.css'
 import SwipeableCarousel from './SwipeableCarousel'
 
 function Modal(props) {
   const modalRef = useRef()
-  // const onModalClick = e => {
-  //   if (modalRef.current === e.target) {
-  //     return props.handleClose()
-  //   }
-  //   return
-  // }
-
   const showHideClassName = props.modal
     ? 'modal display-block'
     : 'modal display-none'
+
   const images = []
   const baseurl = 'https://res.cloudinary.com/famuratbuilders/image/upload/'
   const query =
@@ -45,6 +40,12 @@ function Modal(props) {
       <SwipeableCarousel imgs={images} closeBtn={props.handleClose} />
     </div>
   )
+}
+
+Modal.propTypes = {
+  modal: PropTypes.bool,
+  handleClose: PropTypes.func,
+  images: PropTypes.array
 }
 
 export default memo(Modal)
