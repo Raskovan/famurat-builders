@@ -21,3 +21,4 @@ yarn-debug.log*
 yarn-error.log*
 
 get-pip.py
+package-lock.json
