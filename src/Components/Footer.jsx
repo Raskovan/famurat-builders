@@ -3,6 +3,7 @@ import '../styles/footer.css'
 
 function Footer() {
   const year = new Date().getFullYear()
+
   return (
     <div className="footer-container">
       <div className="footer-logo-container">
