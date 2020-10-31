@@ -48,7 +48,7 @@ function Quotes() {
           />
         </a>
         <a
-          href="https://www.houzz.com/professionals/general-contractors/famurat-builders-llc-pfvwus-pf~1671518338/__public"
+          href="https://www.houzz.com/magazine/kitchen-of-the-week-a-room-transformed-into-functional-art-stsetivw-vs~135822831"
           target="_new"
         >
           <img
